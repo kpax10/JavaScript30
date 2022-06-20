@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Array Cardio 💪💪</title>
 </head>
+
 <body>
   <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
   <script>
@@ -26,16 +28,44 @@
 
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
+
+    const isAdult = people.some((person) => {
+      const currentYear = 2022;
+      return currentYear - person.year >= 19
+    })
+    console.log("🚀 ~ file: index-START.html ~ line 37 ~ isAdult ~ isAdult", { isAdult })
+
     // Array.prototype.every() // is everyone 19 or older?
+
+    const allAdults = people.every((person) => {
+      const currentYear = 2022;
+      return currentYear - person.year >= 19
+    })
+    console.log("🚀 ~ file: index-START.html ~ line 44 ~ allAdults ~ allAdults", allAdults)
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
 
+    const comment = comments.find((comment) => {
+      return comment.id === 823423;
+    })
+    console.log("🚀 ~ file: index-START.html ~ line 53 ~ comment ~ comment", comment)
+
+
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
 
+    const findComment = comments.findIndex((comment) => {
+      return comment.id === 823423;
+    })
+    console.log("🚀 ~ file: index-START.html ~ line 62 ~ findComment ~ findComment", findComment)
+    const removeComment = comments.splice(findComment, 1)
+
+    console.log(comments);
+
   </script>
 </body>
+
 </html>
